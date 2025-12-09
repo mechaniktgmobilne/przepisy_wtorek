@@ -21,7 +21,7 @@ public class ListaPrzepisowActivity extends AppCompatActivity {
                 Toast.LENGTH_SHORT).show();
         //TODO :zrobić poniższe jeszcze raz
         ArrayList<Przepis> przepisy
-                = RepozytoriumPrzepisow.getPrzepisy();
+                = RepozytoriumPrzepisow.zwrocPrzepisyZKategorii(kategoriaPrzepisu);
         //TODO: wyswietlic tylko przpisy z tej kategorii
         ListView listView = findViewById(R.id.listViewListaPrzepisow);
         ArrayAdapter<Przepis> arrayAdapter = new ArrayAdapter<>(
@@ -30,5 +30,14 @@ public class ListaPrzepisowActivity extends AppCompatActivity {
                 przepisy
         );
         listView.setAdapter(arrayAdapter);
+        /*
+        1. dane -> tu ArrayList przepisy
+        2. listView -> zadeklarować i znaleźć po id
+        3. Array Adapter
+            - context aplikacji - this
+            - widok na pojedynczy element -> tu android.R.layout. simple....
+            - lista z danymi
+        4. przypisać ArrayAdapter do ListView
+         */
     }
 }

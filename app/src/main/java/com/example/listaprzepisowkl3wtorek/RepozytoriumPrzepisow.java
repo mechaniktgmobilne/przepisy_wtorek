@@ -23,4 +23,15 @@ public class RepozytoriumPrzepisow {
         generujPrzepisy();
         return przepisy;
     }
+
+    public static ArrayList<Przepis> zwrocPrzepisyZKategorii(String kategoria){
+        ArrayList<Przepis> przepisyZKategorii =new ArrayList<>();
+        generujPrzepisy();
+        for (Przepis przepis:przepisy) {
+            if(przepis.getKategoria().equals(kategoria)){
+                przepisyZKategorii.add(przepis);
+            }
+        }
+        return przepisyZKategorii;
+    }
 }
