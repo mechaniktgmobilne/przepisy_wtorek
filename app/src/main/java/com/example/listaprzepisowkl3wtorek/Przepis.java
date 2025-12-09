@@ -6,12 +6,26 @@ public class Przepis {
     private String skladniki;
     private String opis;
 
+    private int idPrzepisu;
+    private static int licznikPrzepisow = 0;
+
     public Przepis(String nazwaPrzepisu) {
         this.nazwaPrzepisu = nazwaPrzepisu;
         kategoria = "ciasta";
         idObrazka = R.drawable.sernik;
         skladniki = "";
         opis = "";
+        licznikPrzepisow++;
+        idPrzepisu = licznikPrzepisow;
+    }
+
+    public Przepis(String nazwaPrzepisu, String kategoria, int idObrazka, String skladniki, String opis, int idPrzepisu) {
+        this.nazwaPrzepisu = nazwaPrzepisu;
+        this.kategoria = kategoria;
+        this.idObrazka = idObrazka;
+        this.skladniki = skladniki;
+        this.opis = opis;
+        this.idPrzepisu = idPrzepisu;
     }
 
     public Przepis(String nazwaPrzepisu, String kategoria, int idObrazka, String skladniki, String opis) {
@@ -20,8 +34,18 @@ public class Przepis {
         this.idObrazka = idObrazka;
         this.skladniki = skladniki;
         this.opis = opis;
+        licznikPrzepisow++;
+        idPrzepisu = licznikPrzepisow;
     }
     //TODO: przemyśleć czy są potrzebne settery
+
+    public int getIdPrzepisu() {
+        return idPrzepisu;
+    }
+
+    public void setIdPrzepisu(int idPrzepisu) {
+        this.idPrzepisu = idPrzepisu;
+    }
 
     @Override
     public String toString() {
